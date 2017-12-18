@@ -50,6 +50,7 @@ module ItunesReceiptValidator
     end
 
     def expiration_intent
+      return EXPIRATION_INTENTS[0] unless json.key?(:expiration_intent)
       EXPIRATION_INTENTS[json[:expiration_intent].to_i]
     end
 
