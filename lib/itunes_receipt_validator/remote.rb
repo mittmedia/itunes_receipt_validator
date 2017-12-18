@@ -12,8 +12,8 @@ module ItunesReceiptValidator
     SANDBOX_ENDPOINT = 'https://sandbox.itunes.apple.com/verifyReceipt'.freeze
 
     EXPIRATION_INTENTS = {
-      0 => :no_expiration_intent,
-      1 => :canceled,                   # Customer canceled their subscription
+      0 => :none,
+      1 => :cancelled,                  # Customer cancelled their subscription
       2 => :billing_error,              # Customers payment information invalid
       3 => :customer_did_not_agree,     # To a recent price increase
       4 => :product_was_not_available,  # For purchase at the time of renewal
