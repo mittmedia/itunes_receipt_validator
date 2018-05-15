@@ -41,12 +41,12 @@ module ItunesReceiptValidator
 
     def in_billing_retry_period?
       json.key?(:is_in_billing_retry_period) &&
-        json[:is_in_billing_retry_period] == 1
+        json[:is_in_billing_retry_period].to_i == 1
     end
 
     def in_cancelled_billing_retry_period?
       json.key?(:is_in_billing_retry_period) &&
-        json[:is_in_billing_retry_period].zero?
+        json[:is_in_billing_retry_period].to_i == 0
     end
 
     def expiration_intent
